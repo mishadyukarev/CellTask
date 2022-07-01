@@ -16,11 +16,8 @@ namespace Cell.Model.Entity
         //Тут я уже устал всё по Entities и компонентам раскидывать
 
         readonly int[,] _idxsletters = new int[ValuesGame.MAX_X, ValuesGame.MAX_Y];
-
         public bool NeedUpdateView;
-        public bool IsGeneratedLetters;
         public readonly Random Random = new Random();
-        public Vector3 LocalScaleParentGrind;
 
         public ActivatedLettersC ActivatedLettersC;
         public readonly DataFromViewToModelC DataFromViewToModelC;
@@ -31,6 +28,9 @@ namespace Cell.Model.Entity
 
 
         #region Properties
+
+        public bool IsGeneratedLetters { get; internal set; }
+        public Vector3 LocalScaleParentGrind { get; internal set; }
 
         public int AmountActivatedLettersByX
         {
